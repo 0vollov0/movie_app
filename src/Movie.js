@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './Movie.css';
 import PropTypes from 'prop-types';
 
@@ -6,7 +6,7 @@ function Movie({title,poster,genres,synopsis}){
     return (
         <div className="Movie">
             <div className="Movie__Columns">
-                <MoviePoster poster={poster}></MoviePoster>
+                <MoviePoster poster={poster} title={title}></MoviePoster>
             </div>
             <div className="Movie__Columns">
                 <h1>{title}</h1>
@@ -28,9 +28,9 @@ Movie.propTypes ={
     synopsis : PropTypes.string.isRequired
 }
 
-function MoviePoster({poster}){
+function MoviePoster({poster,title}){
     return(
-        <img src={poster}></img>
+        <img src={poster} alt={title}></img>
     )
 }
 
